@@ -3,25 +3,25 @@ import time
 import sys
  
 GPIO.setmode(GPIO.BCM)
-coil_A_1_pin = 4
-coil_A_2_pin = 17
-coil_B_1_pin = 23
-coil_B_2_pin = 24
+pin1 = 4
+pin2 = 17
+pin3 = 23
+pin4 = 24
  
 
 delay = 0.001
 count = 512
 
-GPIO.setup(coil_A_1_pin, GPIO.OUT)
-GPIO.setup(coil_A_2_pin, GPIO.OUT)
-GPIO.setup(coil_B_1_pin, GPIO.OUT)
-GPIO.setup(coil_B_2_pin, GPIO.OUT)
+GPIO.setup(pin1, GPIO.OUT)
+GPIO.setup(pin2, GPIO.OUT)
+GPIO.setup(pin3, GPIO.OUT)
+GPIO.setup(pin4, GPIO.OUT)
  
-def do_step(w1, w2, w3, w4):
-    GPIO.output(coil_A_1_pin, w1)
-    GPIO.output(coil_A_2_pin, w2)
-    GPIO.output(coil_B_1_pin, w3)
-    GPIO.output(coil_B_2_pin, w4)
+def do_step(s1, s2, s3, s4):
+    GPIO.output(pin1, s1)
+    GPIO.output(pin2, s2)
+    GPIO.output(pin3, s3)
+    GPIO.output(pin4, s4)
  
 def forward(sequence, delay, steps):
     for _ in range(steps):
